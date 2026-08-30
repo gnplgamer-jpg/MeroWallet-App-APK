@@ -21,6 +21,7 @@ jobs:
         run: |
           rm -rf node_modules package-lock.json
           yarn install
+          yarn add react-is
 
       - name: Build Web App
         run: yarn run build
