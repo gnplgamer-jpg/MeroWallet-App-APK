@@ -20,16 +20,15 @@ jobs:
       - name: Install App Dependencies
         run: |
           rm -rf node_modules package-lock.json
-          npm cache clean --force
-          npm install --include=optional
+          yarn install
 
       - name: Build Web App
-        run: npm run build
+        run: yarn run build
 
       - name: Install Capacitor
         run: |
-          npm install @capacitor/core
-          npm install -D @capacitor/cli @capacitor/android
+          yarn add @capacitor/core
+          yarn add -D @capacitor/cli @capacitor/android
 
       - name: Initialize Android Platform
         run: npx cap add android
